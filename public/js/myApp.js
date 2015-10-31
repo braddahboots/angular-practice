@@ -11,10 +11,3 @@ myApp
   .run(function() {
     //initialize
   });
-
-// what ever the dependency is, angular will inject it within the function argument
-// the 2nd argumnet that is passed through controller is an array made of string values that represent the dependencies within the function callback
-myApp.controller('myController', ['$scope', function($scope) {
-  $scope.myFirstName = 'Boots';
-  $scope.myModel = 'Ready Player One';
-}]);
