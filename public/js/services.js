@@ -1,7 +1,9 @@
 angular.module('myApp')
   .service('BookService', [function() {
 
-    var books = [
+    var self = this;
+
+    this.books = [
       {
         title : 'Talion the Revenant',
         author : 'Michael A. Stackpole'
@@ -38,12 +40,13 @@ angular.module('myApp')
 
     this.getBook = function(id) {
 
-
     };
 
-    this.getBooks = function() {
-      return books;
-
+    this.addBook = function(book) {
+      self.books.push({
+        title: book.title,
+        author: book.author
+      });
     };
 
 
