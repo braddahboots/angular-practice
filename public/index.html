@@ -33,7 +33,7 @@
     <div>
       <h2>Books</h2>
       <ul>
-        <li class-'book' ng-repeat='book in bookService.books'>
+        <li class='book' ng-repeat='book in bookService.books'>
           <h4 class='book_title'>{{ book.title }}</h4>
           <p class='book_author'>{{ book.author }}</p>
         </li>
@@ -53,7 +53,18 @@
      </fieldset>
     </div>
 
+    <div>
+      <h2>Movies</h2>
+      <ul>
+        <li class='movie' ng-repeat='movie in movies'>
+          <h4>{{ movie.title }}</h4>
+          <p>{{ movie.year }}</p>
+        </li>
+      </ul>
+    </div>
+
   </div>
+
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js'></script>
   <script src='js/myApp.js'></script>
@@ -62,6 +73,7 @@
   <script src="js/constants.js"></script>
   <script src="js/factories.js"></script>
   <script src="js/services.js"></script>
+  <script src="js/providers.js"></script>
 
 </body>
 </html>

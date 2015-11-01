@@ -7,12 +7,17 @@ myApp.controller('myController', [
   'mainCharacter',
   'CharacterVersionFactory',
   'BookService',
-  function($scope, mainCharacter, CharacterVersionFactory, BookService) {
+  'Movies',
+  function($scope, mainCharacter, CharacterVersionFactory, BookService, Movies) {
 
   $scope.myFirstName = 'Boots';
   $scope.myModel = 'Ready Player One';
   $scope.mainCharacter = mainCharacter;
   $scope.characterVersion = CharacterVersionFactory.characterVersion();
   $scope.bookService = BookService;
-
+  $scope.movies = [];
+  Movies.getMovies().success(function(movies) {
+    console.log(movies);
+    $scope.movies = movies;
+  });
 }]);
