@@ -20,7 +20,7 @@ angular.module('myApp')
       },
       {
         title : 'A New Earh',
-        authro : 'Eckhart Tolle'
+        author : 'Eckhart Tolle'
       },
       {
         title : 'Tuesdays with Morrie',
