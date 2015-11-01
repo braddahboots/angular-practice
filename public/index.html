@@ -5,79 +5,40 @@
   <title>Angular Tutorial</title>
 </head>
 <body ng-app='myApp'>
-  <h1>{{ "Hello " + "Angular!" }} {{ APP_VERSION }}</h1>
 
-  <div>
-    {{ 2 + 3 }}
-  </div>
+  <ul>
+    <li><a ng-href="#/">Home</a></li>
+  </ul>
 
+  <ul>
+    <li><a ng-href="#/books">Books</a></li>
+  </ul>
 
-  <div ng-controller='myController'>
+  <ul>
+    <li><a ng-href="#/movies">Movies</a></li>
+  </ul>
 
-    <div>
-      <input type='text' ng-model='myModel' />
-    </div>
+  <ul>
+    <li><a ng-href="#/other">Other</a></li>
+  </ul>
 
-    <div>
-      {{ myModel }}
-    </div>
-
-    <div>
-      Main Character : {{ mainCharacter }}
-    </div>
-
-    <div>
-      Character Version : {{ characterVersion }}
-    </div>
-
-    <div>
-      <h2>Books</h2>
-      <div>
-        <input type='text' placeholder='Search Book Title' ng-model='searchBookTitle' />
-      </div>
-      <ul>
-        <li class='book' ng-repeat='book in bookService.books | filter:searchBookTitle | orderBy: "title"'>
-          <h4 class='book_title'>{{ book.title }}</h4>
-          <p class='book_author'>{{ book.author }}</p>
-        </li>
-     </ul>
-     <fieldset>
-       <div>
-         <label for='new_book_title'>Title</label>
-         <input id='new_book_title' type='text' ng-model='new_book.title'>
-       </div>
-       <div>
-         <label for='new_book_author'>Author</label>
-         <input id='new_book_author' type='text' ng-model='new_book.author'>
-       </div>
-       <div>
-       <button type='button' ng-click='bookService.addBook(new_book); new_book = null'>Add Book</button>
-       </div>
-     </fieldset>
-    </div>
-
-    <div>
-      <h2>Movies</h2>
-      <ul>
-        <li class='movie' ng-repeat='movie in movies | afterYearFilter:1976 | orderBy:"-year"'>
-          <h4>{{ movie.title }}</h4>
-          <p class='year'>{{ movie.year }}</p>
-        </li>
-      </ul>
-    </div>
+  <div ng-view></div>
 
   </div>
-
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.1/angular-route.min.js'></script>
   <script src='js/myApp.js'></script>
-  <script src='js/controllers.js'></script>
   <script src='js/values.js'></script>
   <script src="js/constants.js"></script>
   <script src="js/factories.js"></script>
   <script src="js/services.js"></script>
   <script src="js/providers.js"></script>
   <script src="js/filters.js"></script>
+  <script src="js/controllers/books-controller.js"></script>
+  <script src="js/controllers/movies-controller.js"></script>
+  <script src="js/controllers/other-controller.js"></script>
+
 
 </body>
 </html>
