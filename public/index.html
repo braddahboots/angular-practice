@@ -36,7 +36,7 @@
         <input type='text' placeholder='Search Book Title' ng-model='searchBookTitle' />
       </div>
       <ul>
-        <li class='book' ng-repeat='book in bookService.books | filter:searchBookTitle'>
+        <li class='book' ng-repeat='book in bookService.books | filter:searchBookTitle | orderBy: "title"'>
           <h4 class='book_title'>{{ book.title }}</h4>
           <p class='book_author'>{{ book.author }}</p>
         </li>
@@ -59,7 +59,7 @@
     <div>
       <h2>Movies</h2>
       <ul>
-        <li class='movie' ng-repeat='movie in movies | afterYearFilter:1983'>
+        <li class='movie' ng-repeat='movie in movies | afterYearFilter:1976 | orderBy:"-year"'>
           <h4>{{ movie.title }}</h4>
           <p class='year'>{{ movie.year }}</p>
         </li>

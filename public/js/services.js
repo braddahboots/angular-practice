@@ -21,7 +21,7 @@ angular.module('myApp')
         author : 'Marijin Haverbeke'
       },
       {
-        title : 'A New Earh',
+        title : 'A New Earth',
         author : 'Eckhart Tolle'
       },
       {
